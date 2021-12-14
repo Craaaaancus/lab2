@@ -141,6 +141,16 @@ public class MainFrame extends JFrame{
 				}
 			}
 		});
+		
+		JButton buttonReset = new JButton("Reset");
+		buttonReset.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent ev) {
+			textFieldX.setText("0");
+			textFieldY.setText("0");
+			textFieldZ.setText("0");
+			textFieldResult.setText("0");
+			}
+		});
 	}
 	
 	public static void main(String[] args) {
