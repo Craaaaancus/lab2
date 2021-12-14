@@ -117,6 +117,31 @@ public class MainFrame extends JFrame{
 		hboxResult.add(Box.createHorizontalGlue());
 		hboxResult.setBorder(BorderFactory.createLineBorder(Color.BLUE));
 		
+		JButton buttonMC = new JButton("MC") ;
+		buttonMC.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent ev) {
+				sum = 0.0;
+				textFieldSum.setText("0");
+			}
+		});
+		
+		
+		JButton buttonMplus = new JButton("M+");
+		buttonMplus.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent ev) {
+				sum += result;
+				textFieldSum.setText(sum.toString());
+			} 
+		});
+		
+		Box hboxSumButtons = Box.createHorizontalBox();
+		hboxSumButtons.add(Box.createHorizontalGlue());
+		hboxSumButtons.add(buttonMC);
+		hboxSumButtons.add(Box.createHorizontalStrut(30));
+		hboxSumButtons.add(buttonMplus);
+		hboxSumButtons.add(Box.createHorizontalGlue());
+		hboxSumButtons.setBorder(BorderFactory.createLineBorder(Color.PINK));
+		
 		JButton buttonCalc = new JButton("Calculate");
 		buttonCalc.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent ev) {
