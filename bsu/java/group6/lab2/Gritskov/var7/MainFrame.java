@@ -45,7 +45,18 @@ public class MainFrame extends JFrame{
 		return Math.pow(Math.sin(Math.pow(z, y)),2) / Math.sqrt(1+Math.pow(x, 3));
 	}
 	
-	
+	private void addRadioButton(String buttonName, final int formulaId) {
+		JRadioButton button = new JRadioButton(buttonName);
+		button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent ev) {
+				MainFrame.this.formulaId = formulaId;
+				
+			}
+		});
+		
+		radioButtons.add(button);
+		hboxFormulaType.add(button);
+	}
 	
 	public MainFrame() {
 		
