@@ -117,7 +117,30 @@ public class MainFrame extends JFrame{
 		hboxResult.add(Box.createHorizontalGlue());
 		hboxResult.setBorder(BorderFactory.createLineBorder(Color.BLUE));
 		
-		
+		JButton buttonCalc = new JButton("Calculate");
+		buttonCalc.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent ev) {
+				try {
+						Double x = Double.parseDouble(textFieldX.getText());
+						Double y = Double.parseDouble(textFieldY.getText());
+						Double z = Double.parseDouble(textFieldZ.getText());
+						
+						
+						if (formulaId==1) {
+							result = calculate1(x, y, z);
+						}
+						else {
+							result = calculate2(x, y, z);
+						}
+						textFieldResult.setText(result.toString());
+			        }
+				catch (NumberFormatException ex){
+					JOptionPane.showMessageDialog(MainFrame.this, "Ошибка в формате записи числа с плавающей точкой", "Ошибочный формат числа", 
+							JOptionPane.WARNING_MESSAGE);
+					
+				}
+			}
+		});
 	}
 	
 	public static void main(String[] args) {
