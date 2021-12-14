@@ -151,6 +151,30 @@ public class MainFrame extends JFrame{
 			textFieldResult.setText("0");
 			}
 		});
+		
+		Box hboxButtons = Box.createHorizontalBox();
+		hboxButtons.add(Box.createHorizontalGlue());
+		hboxButtons.add(buttonCalc);
+		hboxButtons.add(Box.createHorizontalStrut(30));
+		hboxButtons.add(buttonReset);
+		hboxButtons.add(Box.createHorizontalGlue());
+		hboxButtons.setBorder(BorderFactory.createLineBorder(Color.GREEN));
+		
+		Box contentBox = Box.createVerticalBox();
+		contentBox.add(Box.createVerticalGlue());
+		contentBox.add(Box.createVerticalStrut(30));
+		contentBox.add(hboxVariables);
+		contentBox.add(Box.createVerticalStrut(100));
+		contentBox.add(hboxResult);
+		contentBox.add(Box.createVerticalStrut(100));
+		contentBox.add(hboxSumButtons);
+		contentBox.add(Box.createVerticalStrut(30));
+		contentBox.add(hboxButtons);
+		contentBox.add(Box.createVerticalStrut(30));
+		contentBox.add(hboxFormulaType);
+		contentBox.add(Box.createVerticalStrut(30));
+		contentBox.add(Box.createVerticalGlue());
+		getContentPane().add(contentBox, BorderLayout.CENTER);
 	}
 	
 	public static void main(String[] args) {
